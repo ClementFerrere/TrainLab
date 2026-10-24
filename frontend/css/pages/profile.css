@@ -1,0 +1,106 @@
+/* Profil athlète */
+.pf-section { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 14px 2px -2px; }
+.pf-section h3 { font: 600 17px/1.2 var(--font-display); letter-spacing: -0.01em; }
+.pf-section span { font-size: 12px; color: var(--text-3); }
+.small { font-size: 12px; }
+.pf-note { font-size: 12px; color: var(--text-3); margin: 10px 0 0; line-height: 1.5; }
+.pf-note b { color: var(--text-1); }
+.pf-big { font: 600 22px/1.15 var(--font-display); color: var(--text-1); }
+.pf-big small { font-size: 12px; color: var(--text-2); font-weight: 500; margin-left: 2px; }
+
+/* keys (legend / table swatches) */
+.pf-key { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 7px; vertical-align: -1px; flex: none; }
+.pf-key.dot { border-radius: 50%; }
+.pf-key.diamond { width: 9px; height: 9px; border-radius: 1px; transform: rotate(45deg); }
+.legend i.pf-key { margin-right: 0; }
+.pf-dashkey { background: repeating-linear-gradient(90deg, var(--text-3) 0 5px, transparent 5px 8px) !important; }
+
+/* ---------------------------------------------------------------- Runner Matrix */
+.pf-radar-card { display: flex; flex-direction: column; }
+.pf-arch { padding: 2px 0 6px; }
+.pf-arch-name { font: 700 30px/1.05 var(--font-display); letter-spacing: 0.04em; text-transform: uppercase; margin: 4px 0 6px;
+  background: linear-gradient(90deg, var(--text-1), var(--s-run)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.pf-arch-sub { color: var(--text-2); font-size: 13px; }
+.pf-arch-sub b { color: var(--text-1); }
+.pf-radar-legend { margin-top: 12px; }
+
+.pf-axes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); height: 100%; }
+@media (max-width: 1500px) { .pf-axes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .pf-axes { grid-template-columns: 1fr; } }
+.pf-axis { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.pf-axis-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.pf-axis-name { font-weight: 600; font-size: 14px; }
+.pf-score { font: 600 28px/1 var(--font-display); }
+.pf-score small { font-size: 12px; color: var(--text-3); font-weight: 500; margin-left: 2px; }
+.pf-scorebar { position: relative; height: 6px; border-radius: 99px; background: var(--surface-3); margin: 2px 0 4px; }
+.pf-scorebar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 99px; background: var(--s-run); }
+.pf-scorebar b { position: absolute; top: -4px; width: 3px; height: 14px; margin-left: -1.5px; border-radius: 2px; background: var(--text-2); box-shadow: 0 0 0 2px var(--surface-1); cursor: default; }
+.pf-axis-val { font-size: 13px; color: var(--text-1); line-height: 1.45; }
+.pf-delta { font-size: 12px; color: var(--text-2); }
+.pf-delta .arr { font-size: 10px; }
+.pf-delta.up .arr { color: var(--good); }
+.pf-delta.down .arr { color: var(--critical); }
+.pf-delta.flat .arr { color: var(--text-3); }
+.pf-spark { height: 44px; margin: 2px -4px 0; }
+.pf-desc { font-size: 11.5px; color: var(--text-3); margin: 0; line-height: 1.4; }
+
+/* ---------------------------------------------------------------- predictions */
+.pf-preds { display: grid; gap: 4px; }
+.pf-prow { display: grid; grid-template-columns: 230px minmax(0, 1fr) 330px; gap: 26px; align-items: center; padding: 14px 0; border-top: 1px solid var(--border); }
+.pf-prow:first-child { border-top: 0; padding-top: 4px; }
+@media (max-width: 1280px) { .pf-prow { grid-template-columns: 200px minmax(0, 1fr); } .pf-mlist { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .pf-prow { grid-template-columns: 1fr; } }
+.pf-ptime { font: 600 34px/1.1 var(--font-display); letter-spacing: -0.02em; margin: 2px 0; }
+.pf-goal { margin-top: 8px; font-size: 12px; color: var(--text-2); padding: 6px 9px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); line-height: 1.5; }
+.pf-goal b { color: var(--text-1); }
+
+.pf-track { position: relative; height: 92px; }
+.pf-rail { position: absolute; left: 0; right: 0; top: 46px; height: 2px; background: var(--grid); border-radius: 2px; }
+.pf-band { position: absolute; top: 34px; height: 26px; background: rgba(238, 240, 244, 0.1); border: 1px solid rgba(238, 240, 244, 0.18); border-radius: 6px; }
+.pf-ens { position: absolute; top: 26px; width: 4px; height: 42px; margin-left: -2px; border-radius: 3px; background: var(--text-1); box-shadow: 0 0 0 2px var(--surface-1); cursor: default; z-index: 3; }
+.pf-target { position: absolute; top: 16px; height: 50px; width: 0; border-left: 2px solid var(--warning); z-index: 2; }
+.pf-target em { position: absolute; top: -14px; left: 0; transform: translateX(-50%); white-space: nowrap; font-style: normal; font-size: 11px; color: var(--text-2); }
+.pf-dot { position: absolute; top: 47px; transform: translate(-50%, -50%); border-radius: 50%; box-shadow: 0 0 0 2px var(--surface-1); z-index: 4; cursor: default; }
+.pf-dot:hover { box-shadow: 0 0 0 2px var(--surface-1), 0 0 0 4px rgba(255, 255, 255, 0.5); }
+.pf-ticks { position: absolute; left: 0; right: 0; top: 70px; height: 14px; }
+.pf-ticks span { position: absolute; transform: translateX(-50%); font-size: 11px; color: var(--text-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pf-faster { position: absolute; left: 0; right: 0; top: -2px; display: flex; justify-content: space-between; font-size: 10.5px; color: var(--text-3); }
+
+.pf-mlist { display: grid; gap: 3px; }
+.pf-mrow { display: grid; grid-template-columns: auto minmax(0, 1fr) 62px 70px 38px; align-items: center; gap: 6px; font-size: 12.5px; }
+.pf-mrow .pf-key { margin-right: 0; }
+.pf-mname { color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pf-mrow .num { text-align: right; }
+.pf-wbar { height: 5px; background: var(--surface-3); border-radius: 99px; overflow: hidden; }
+.pf-wbar i { display: block; height: 100%; border-radius: 99px; }
+.pf-wpct { font-size: 11.5px; }
+
+/* leaderboard */
+.pf-lb { max-height: none; }
+.pf-lb td:first-child { display: flex; align-items: center; }
+.pf-ens-row td { font-weight: 600; border-top: 1px solid var(--border-strong); }
+.pf-lb tbody tr { cursor: default; }
+.pf-mape { display: inline-block; width: 64px; height: 5px; border-radius: 99px; background: var(--surface-3); margin-right: 8px; vertical-align: middle; overflow: hidden; }
+.pf-mape i { display: block; height: 100%; background: var(--text-3); border-radius: 99px; }
+.pf-method { font-size: 12px; color: var(--text-2); line-height: 1.55; margin: 12px 0 8px; }
+.pf-mdesc { display: grid; gap: 7px; font-size: 12px; color: var(--text-3); line-height: 1.45; }
+.pf-mdesc b { color: var(--text-1); font-weight: 600; }
+.pf-legend { margin-bottom: 4px; }
+
+/* speed-duration side card */
+.pf-sdtable tbody tr { cursor: default; }
+.pf-cs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+/* durability */
+.pf-di { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+.pf-di .pf-note { grid-column: 1 / -1; margin-top: 2px; }
+.pf-ditile { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; display: grid; gap: 4px; }
+.pf-dirow { display: flex; align-items: baseline; gap: 8px; }
+
+/* engine */
+.pf-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pf-etile { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; display: grid; gap: 2px; }
+.pf-ramp { display: inline-flex; gap: 2px; }
+.pf-ramp i { width: 10px; height: 10px; border-radius: 2px; }
+.pf-plegend { margin: -2px 0 10px; }
+.pf-key.pf-ring { background: transparent !important; border: 1.5px solid var(--text-2); }

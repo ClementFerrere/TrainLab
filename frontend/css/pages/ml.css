@@ -1,0 +1,26 @@
+/* Prédictions ML */
+.ml-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ml-tile { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 4px; }
+.ml-pred { font: 600 40px/1.05 var(--font-display); letter-spacing: -0.02em; margin-top: 4px; }
+.ml-pred small { font-size: 15px; color: var(--text-2); margin-left: 4px; font-weight: 500; }
+.ml-pred.sm { font-size: 30px; margin: 2px 0 10px; }
+.ml-diff { font-size: 13px; color: var(--text-1); margin-top: 2px; }
+.ml-drivers { margin-top: 10px; display: grid; gap: 4px; border-top: 1px solid var(--border); padding-top: 8px; }
+.ml-drv { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--text-2); }
+.ml-drv b { color: var(--text-1); }
+.ml-verdict { margin-top: 10px; }
+.ml-note { font-size: 12px; color: var(--text-3); margin: 10px 0 0; line-height: 1.5; }
+.ml-foot { font-size: 12px; color: var(--text-2); margin-top: 6px; }
+.ml-foot b { color: var(--text-1); }
+.ml-probbar { display: flex; gap: 2px; height: 16px; border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
+.ml-probbar span { display: block; height: 100%; }
+.ml-feel { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ml-score td { vertical-align: middle; }
+.ml-score tbody tr { cursor: default; }
+.ml-auc { display: grid; gap: 8px; max-width: 760px; }
+.ml-aucrow { display: grid; grid-template-columns: 300px 1fr 48px; align-items: center; gap: 12px; font-size: 13px; color: var(--text-2); }
+.ml-aucbar { height: 10px; background: var(--surface-3); border-radius: 99px; overflow: hidden; }
+.ml-aucbar div { height: 100%; border-radius: 99px; }
+.ml-method { margin: 0; padding-left: 18px; display: grid; gap: 8px; color: var(--text-2); font-size: 13px; line-height: 1.55; }
+.ml-method b { color: var(--text-1); }
+@media (max-width: 1100px) { .ml-tiles, .ml-feel { grid-template-columns: 1fr; } .ml-aucrow { grid-template-columns: 1fr 1fr 48px; } }

@@ -1,0 +1,40 @@
+/* Labo */
+.lab-controls { align-items: flex-end; gap: 12px; }
+.lab-controls .field { display: grid; gap: 4px; font-size: 12px; color: var(--text-3); }
+.lab-controls select.input { min-width: 210px; max-width: 260px; }
+.lab-swap { padding: 7px 9px; margin-bottom: 1px; }
+.lab-controls .toggle { padding-bottom: 8px; }
+.lab-sentence { font-size: 14px; color: var(--text-2); padding: 2px 2px; }
+.lab-sentence b { color: var(--text-1); font-weight: 600; }
+
+/* stats */
+.lab-rho { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: end; }
+.rho-bar { position: relative; height: 10px; border-radius: 99px; background: var(--surface-3); margin-bottom: 14px; }
+.rho-mid { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 1px; background: var(--axis); }
+.rho-fill { position: absolute; top: 0; bottom: 0; border-radius: 99px; }
+.lab-strength { font-size: 14px; font-weight: 600; margin: 6px 0 12px; }
+.lab-kv { margin-bottom: 12px; }
+.lab-kv dd .muted { margin-left: 4px; font-size: 12px; }
+.lab-warn { margin-bottom: 12px; line-height: 1.6; }
+.lab-lagtitle { font-size: 13px; font-weight: 500; margin-top: 4px; }
+.lab-caveat { font-size: 12px; margin: 8px 0 0; }
+
+/* matrix legend */
+.lab-divleg { display: flex; align-items: center; gap: 8px; justify-content: flex-end; font-size: 11px; margin-top: 6px; }
+.lab-divleg i { display: inline-block; width: 120px; height: 8px; border-radius: 99px; }
+
+/* discovery */
+.lab-derived { font-size: 12px; margin-bottom: 10px; }
+.disc-list { display: grid; gap: 2px; }
+.disc-row {
+  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(70px, 1fr) 48px 64px; gap: 10px; align-items: center;
+  width: 100%; text-align: left; border: 0; background: transparent; padding: 7px 8px; border-radius: 8px; cursor: pointer; color: var(--text-1); font-size: 13px;
+}
+.disc-row:hover { background: var(--surface-2); }
+.disc-row.ns { opacity: 0.5; }
+.disc-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.disc-bar { position: relative; height: 8px; border-radius: 99px; background: var(--surface-3); }
+.disc-r { text-align: right; font-weight: 600; }
+.disc-q { text-align: right; font-size: 11px; color: var(--text-3); }
+@media (max-width: 1280px) { .lab-controls select.input { min-width: 170px; } }
+@media (max-width: 1280px) { .lab-side { grid-column: span 12 !important; } }

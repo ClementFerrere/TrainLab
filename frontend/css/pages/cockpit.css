@@ -1,0 +1,17 @@
+/* Cockpit — readiness card, ensemble prediction band (layout lives in app.css) */
+.cockpit .hero .stat-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cockpit .gauge-labels { font-size: 10.5px; }
+
+.bullet-range { position: absolute; top: 21px; height: 12px; border-radius: 99px; background: rgba(200, 245, 96, 0.18); box-shadow: inset 0 0 0 1px rgba(200, 245, 96, 0.35); cursor: default; }
+
+.rd-gauge { margin: 14px 0 22px; }
+.rd-bars { display: grid; gap: 7px; margin-top: 4px; }
+.rd-row { display: grid; grid-template-columns: 112px 1fr 38px; align-items: center; gap: 10px; font-size: 12px; cursor: default; }
+.rd-lbl { color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rd-bar { position: relative; height: 8px; border-radius: 99px; background: var(--surface-3); }
+.rd-fill { position: absolute; top: 0; bottom: 0; border-radius: 99px; }
+.rd-mid { position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; background: var(--axis); }
+.rd-val { text-align: right; color: var(--text-1); }
+.rd-axis { display: flex; justify-content: space-between; font-size: 10.5px; margin: 4px 48px 0 122px; }
+.rd-div { margin-top: 12px; font-size: 12px; }
+.rd-note { margin-top: 10px; font-size: 12px; }

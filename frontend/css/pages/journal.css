@@ -1,0 +1,73 @@
+/* Journal page */
+.j-filters { margin-bottom: 2px; }
+.j-sports { display: flex; gap: 6px; flex-wrap: wrap; }
+.j-chip {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  padding: 5px 11px; border-radius: 999px; font-size: 13px;
+  background: var(--surface-1); border: 1px solid var(--border); color: var(--text-2);
+}
+.j-chip:hover { color: var(--text-1); background: var(--surface-2); }
+.j-chip.on { color: var(--text-1); background: var(--surface-3); border-color: var(--border-strong); }
+.j-chip .sw { width: 8px; height: 8px; border-radius: 2px; }
+.j-search { position: relative; margin-left: auto; display: flex; align-items: center; }
+.j-search svg { position: absolute; left: 10px; width: 15px; height: 15px; fill: none; stroke: var(--text-3); stroke-width: 2; stroke-linecap: round; }
+.j-search .input { padding-left: 32px; width: 280px; }
+.grid.j-dim { opacity: 0.55; transition: opacity 0.15s; }
+
+/* summary */
+.j-split { display: grid; gap: 7px; }
+.j-split-row { display: grid; grid-template-columns: 70px 1fr auto; align-items: center; gap: 10px; font-size: 13px; }
+.j-split-lbl { color: var(--text-2); }
+.j-split-bar { height: 8px; background: var(--surface-3); border-radius: 99px; overflow: hidden; }
+.j-split-bar i { display: block; height: 100%; border-radius: 99px; }
+.j-split-val { white-space: nowrap; color: var(--text-1); }
+
+/* calendar */
+.j-monthnav { gap: 8px; }
+.j-monthnav .btn { padding: 6px 9px; }
+.j-month { min-width: 130px; text-align: center; font-weight: 600; text-transform: capitalize; }
+.j-cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)) 108px; gap: 6px; }
+.j-dh { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.07em; padding: 0 4px 2px; }
+.j-day {
+  min-height: 92px; padding: 6px; border-radius: 10px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 4px; min-width: 0;
+}
+.j-day.out { opacity: 0.38; }
+.j-day.today { border-color: var(--accent); }
+.j-dnum { font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.j-day.today .j-dnum { color: var(--accent); font-weight: 600; }
+.j-pills { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.j-pills .pill { font-size: 11.5px; padding: 3px 6px; }
+.pill.j-race { box-shadow: inset 0 0 0 1px var(--text-1); }
+.j-wtot {
+  display: flex; flex-direction: column; justify-content: center; gap: 2px;
+  padding: 6px 10px; border-radius: 10px; font-size: 12px; color: var(--text-2);
+  background: transparent; border: 1px dashed var(--border-strong);
+}
+.j-wtot b { color: var(--text-1); font-size: 14px; font-variant-numeric: tabular-nums; }
+
+/* table */
+.j-tablewrap { max-height: 620px; }
+.j-tname { display: inline-flex; align-items: center; gap: 8px; }
+.j-tname .sw { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+.j-racechip { padding: 1px 7px; font-size: 11px; color: var(--text-1); }
+.j-more { display: flex; justify-content: center; margin-top: 12px; }
+
+/* route wall */
+.j-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+.j-tile {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 6px 4px 5px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--border);
+  transition: background 0.15s, border-color 0.15s;
+}
+.j-tile:hover { background: var(--surface-3); border-color: var(--border-strong); }
+.j-tile svg { display: block; }
+.j-tile-cap { display: flex; justify-content: space-between; width: 100%; padding: 0 4px; font-size: 10.5px; color: var(--text-3); }
+
+@media (max-width: 1100px) {
+  .j-cal { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .j-cal .j-wtot, .j-cal .j-dh:nth-child(8) { display: none; }
+  .j-search { margin-left: 0; }
+  .j-search .input { width: 220px; }
+}

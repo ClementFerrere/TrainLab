@@ -1,0 +1,34 @@
+# --- personal data & secrets: NEVER commit ------------------------------------
+# data/ holds the SQLite databases, the original Garmin FIT files and data/secrets/
+# (Garmin API key, Strava tokens). .env holds the Strava client id / secret.
+data/
+.env
+.env.*
+!.env.example
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.fit
+*.zip
+*.pem
+*.key
+secrets/
+garmin_personal_api_key
+strava_tokens.json
+
+# --- third-party documentation kept locally (Garmin's own content) -------------
+docs/
+
+# --- environment & tooling ------------------------------------------------------
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+*.log
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db

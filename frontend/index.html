@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrainLab — ton labo d'entraînement</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%2311141a%27/%3E%3Cpath d=%27M12 6.2h8M13.6 6.2v6L8.6 21.4a2.6 2.6 0 0 0 2.3 3.9h10.2a2.6 2.6 0 0 0 2.3-3.9L18.4 12.2v-6%27 fill=%27none%27 stroke=%27%23b3b8c4%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M10.4 20.4h3l1.4-2.6 1.9 4.3 1.4-2.5h3.5%27 fill=%27none%27 stroke=%27%23c8f560%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/css/app.css?v=__V__">
+  <link rel="stylesheet" href="/css/pages/journal.css?v=__V__">
+  <link rel="stylesheet" href="/css/pages/activity.css?v=__V__">
+  <link rel="stylesheet" href="/css/pages/load.css?v=__V__">
+  <link rel="stylesheet" href="/css/pages/sleep.css?v=__V__">
+  <link rel="stylesheet" href="/css/pages/lab.css?v=__V__">
+  <link rel="stylesheet" href="/css/pages/settings.css?v=__V__">
+  <link rel="stylesheet" href="/css/pages/profile.css?v=__V__">
+  <link rel="stylesheet" href="/css/pages/ml.css?v=__V__">
+  <link rel="stylesheet" href="/css/pages/cockpit.css?v=__V__">
+  <script src="/vendor/echarts.min.js"></script>
+  <script src="/vendor/leaflet/leaflet.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#/">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="brand-bg"/><path d="M12 6.2h8M13.6 6.2v6L8.6 21.4a2.6 2.6 0 0 0 2.3 3.9h10.2a2.6 2.6 0 0 0 2.3-3.9L18.4 12.2v-6" class="brand-flask"/><path d="M10.4 20.4h3l1.4-2.6 1.9 4.3 1.4-2.5h3.5" class="brand-pulse"/></svg>
+        <span>TrainLab</span>
+      </a>
+      <nav class="nav">
+        <a href="#/" data-route="cockpit"><svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M12 13l4-4"/><circle cx="12" cy="13" r="1.4"/><path d="M4 17h16"/></svg>Cockpit</a>
+        <a href="#/journal" data-route="journal"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M9 3v4M15 3v4"/></svg>Journal</a>
+        <a href="#/profile" data-route="profile"><svg viewBox="0 0 24 24"><path d="M12 3l8 4.6v8.8L12 21l-8-4.6V7.6z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg>Profil athlète</a>
+        <a href="#/load" data-route="load"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 5-8 4 5"/><path d="M3 21h18"/></svg>Charge & objectifs</a>
+        <a href="#/sleep" data-route="sleep"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>Sommeil & récup</a>
+        <a href="#/ml" data-route="ml"><svg viewBox="0 0 24 24"><path d="M4 19l5-6 3 3 4-6 4 4"/><circle cx="9" cy="13" r="1.3"/><circle cx="12" cy="16" r="1.3"/><circle cx="16" cy="10" r="1.3"/><path d="M18 3l.6 1.6L20 5l-1.4.5L18 7l-.6-1.5L16 5l1.4-.4z"/></svg>Prédictions ML</a>
+        <a href="#/lab" data-route="lab"><svg viewBox="0 0 24 24"><circle cx="7" cy="16" r="1.6"/><circle cx="11" cy="11" r="1.6"/><circle cx="16" cy="13" r="1.6"/><circle cx="18" cy="6" r="1.6"/><path d="M4 20h16M4 20V4"/></svg>Labo</a>
+      </nav>
+      <div class="nav nav-bottom">
+        <a href="#/settings" data-route="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>Réglages & sources</a>
+      </div>
+      <div class="sync-box" id="sync-box"></div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="page-title">Cockpit</h1>
+          <p id="page-sub" class="muted"></p>
+        </div>
+        <div class="topbar-right" id="topbar-right"></div>
+      </header>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+  <!-- Every module URL carries the code version (__V__ is filled in by the server), so a
+       browser can never run a stale copy after an update. The longer key keeps already
+       versioned URLs as they are. -->
+  <script type="importmap">{"imports": {"/js/v__V__/": "/js/v__V__/", "/js/": "/js/v__V__/"}}</script>
+  <script type="module">import "/js/app.js";</script>
+</body>
+</html>
